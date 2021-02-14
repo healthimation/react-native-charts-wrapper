@@ -62,6 +62,10 @@ class LineDataExtract : DataExtract {
         if config["circleHoleColors"].array != nil {
             lineDataSet.circleHoleColors = BridgeUtils.parseColors(config["circleHoleColors"].arrayValue)
         }
+
+        if config["circleHoleRadius"].number != nil {
+            lineDataSet.circleHoleRadius = CGFloat(config["circleHoleRadius"].numberValue)
+        }
         
         
         if config["drawCircleHole"].bool != nil {
