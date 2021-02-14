@@ -56,7 +56,11 @@ class LineDataExtract : DataExtract {
         }
         
         if config["circleHoleColor"].int != nil {
-            lineDataSet.circleHoleColor = RCTConvert.uiColor(config["circleHoleColor"].intValue)
+            lineDataSet.setCircleHoleColor(RCTConvert.uiColor(config["circleHoleColor"].intValue))
+        }
+
+        if config["circleHoleColors"].array != nil {
+            lineDataSet.circleHoleColors = BridgeUtils.parseColors(config["circleHoleColors"].arrayValue)
         }
         
         
