@@ -44,6 +44,14 @@ class BarDataExtract : DataExtract {
         if config["barShadowColor"].int != nil {
             barDataSet.barShadowColor = RCTConvert.uiColor(config["barShadowColor"].intValue)
         }
+
+        if config["barBorderWidth"].number != nil {
+            barDataSet.barBorderWidth = CGFloat(config["barBorderWidth"].numberValue)
+        }
+
+        if config["barBorderColor"].int != nil {
+            barDataSet.barBorderColor = RCTConvert.uiColor(config["barBorderColor"].intValue)
+        }
         
         if config["highlightAlpha"].number != nil {
             barDataSet.highlightAlpha = BridgeUtils.toIOSAlpha(config["highlightAlpha"].numberValue)
