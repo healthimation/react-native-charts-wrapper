@@ -170,7 +170,7 @@ public class ChartDataSetConfigUtils {
         }
         if (BridgeUtils.validate(config, ReadableType.Number, "lineWidth")) {
             float lineWidth = (float) config.getDouble("lineWidth");
-            if (lineWidth >= 0.2f && lineWidth < 10f) {
+            if (lineWidth >= 0.2f) {
                 dataSet.setLineWidth(lineWidth);
             }
         }

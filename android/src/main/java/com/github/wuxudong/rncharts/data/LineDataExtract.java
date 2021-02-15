@@ -60,8 +60,17 @@ public class LineDataExtract extends DataExtract<LineData, Entry> {
         if (BridgeUtils.validate(config, ReadableType.Number, "circleHoleColor")) {
             lineDataSet.setCircleHoleColor(config.getInt("circleHoleColor"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Array, "circleHoleColors")) {
+            lineDataSet.setCircleHoleColors(BridgeUtils.convertToIntArray(config.getArray("circleHoleColors")));
+        }
         if (BridgeUtils.validate(config, ReadableType.Boolean, "drawCircleHole")) {
             lineDataSet.setDrawCircleHole(config.getBoolean("drawCircleHole"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Number, "circleHoleRadius")) {
+            lineDataSet.setCircleHoleRadius((float) config.getDouble("circleHoleRadius"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Boolean, "drawCirclesAsRectangles")) {
+            lineDataSet.setDrawCirclesAsRectangles(config.getBoolean("drawCirclesAsRectangles"));
         }
         if (BridgeUtils.validate(config, ReadableType.Map, "dashedLine")) {
             ReadableMap dashedLine = config.getMap("dashedLine");
