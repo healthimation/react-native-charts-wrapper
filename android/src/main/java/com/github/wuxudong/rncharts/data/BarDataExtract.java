@@ -71,6 +71,12 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
         if (BridgeUtils.validate(config, ReadableType.Number, "barShadowColor")) {
             barDataSet.setBarShadowColor(config.getInt("barShadowColor"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Number, "barBorderWidth")) {
+            barDataSet.setBarBorderWidth((float) config.getDouble("barBorderWidth"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Number, "barBorderColor")) {
+            barDataSet.setBarBorderColor(config.getInt("barBorderColor"));
+        }
         if (BridgeUtils.validate(config, ReadableType.Number, "highlightAlpha")) {
             barDataSet.setHighLightAlpha(config.getInt("highlightAlpha"));
         }
