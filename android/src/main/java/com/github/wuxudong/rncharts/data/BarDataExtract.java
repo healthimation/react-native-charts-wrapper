@@ -83,6 +83,16 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
         if (BridgeUtils.validate(config, ReadableType.Array, "stackLabels")) {
             barDataSet.setStackLabels(BridgeUtils.convertToStringArray(config.getArray("stackLabels")));
         }
+
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineColor")) {
+            barDataSet.setHighlightLineColor(config.getInt("highlightLineColor"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineWidth")) {
+            barDataSet.setHighlightLineWidth((float) config.getDouble("highlightLineWidth"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineBottomMargin")) {
+            barDataSet.setHighlightLineBottomMargin((float) config.getDouble("highlightLineBottomMargin"));
+        }
     }
 
     @Override

@@ -60,6 +60,18 @@ class BarDataExtract : DataExtract {
         if config["stackLabels"].array != nil {
             barDataSet.stackLabels = config["stackLabels"].arrayValue.map({ return $0.stringValue })
         }
+
+        if config["highlightLineColor"].int != nil {
+            barDataSet.highlightLineColor = RCTConvert.uiColor(config["highlightLineColor"].intValue)
+        }
+
+        if config["highlightLineWidth"].number != nil {
+            barDataSet.highlightLineWidth = CGFloat(config["highlightLineWidth"].numberValue)
+        }
+
+        if config["highlightLineBottomMargin"].number != nil {
+            barDataSet.highlightLineBottomMargin = CGFloat(config["highlightLineBottomMargin"].numberValue)
+        }
     }
     
     override func createEntry(_ values: [JSON], index: Int) -> BarChartDataEntry {
