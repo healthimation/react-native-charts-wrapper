@@ -72,6 +72,10 @@ class BarDataExtract : DataExtract {
         if config["highlightLineBottomMargin"].number != nil {
             barDataSet.highlightLineBottomMargin = CGFloat(config["highlightLineBottomMargin"].numberValue)
         }
+
+        if config["highlightLineAlpha"].number != nil {
+            barDataSet.highlightLineAlpha = BridgeUtils.toIOSAlpha(config["highlightLineAlpha"].numberValue)
+        }
     }
     
     override func createEntry(_ values: [JSON], index: Int) -> BarChartDataEntry {

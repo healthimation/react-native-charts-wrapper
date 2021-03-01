@@ -93,6 +93,9 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
         if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineBottomMargin")) {
             barDataSet.setHighlightLineBottomMargin((float) config.getDouble("highlightLineBottomMargin"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineAlpha")) {
+            barDataSet.setHighLightLineAlpha(config.getInt("highlightLineAlpha"));
+        }
     }
 
     @Override
