@@ -386,6 +386,10 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
         if config["granularityEnabled"].bool != nil {
             axis.granularityEnabled = config["granularityEnabled"].boolValue
         }
+
+        if config["disableIntervalNormalization"].bool != nil {
+            axis.disableIntervalNormalization = config["disableIntervalNormalization"].boolValue
+        }
         
         if config["labelCount"].int != nil {
             var labelCountForce = false

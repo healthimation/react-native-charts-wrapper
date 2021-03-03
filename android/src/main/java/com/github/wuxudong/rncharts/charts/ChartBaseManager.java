@@ -415,6 +415,9 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
         if (BridgeUtils.validate(propMap, ReadableType.Boolean, "granularityEnabled")) {
             axis.setGranularityEnabled(propMap.getBoolean("granularityEnabled"));
         }
+        if (BridgeUtils.validate(propMap, ReadableType.Boolean, "disableIntervalNormalization")) {
+            axis.setDisableIntervalNormalization(propMap.getBoolean("disableIntervalNormalization"));
+        }
         if (BridgeUtils.validate(propMap, ReadableType.Number, "labelCount")) {
             boolean labelCountForce = false;
             if (BridgeUtils.validate(propMap, ReadableType.Boolean, "labelCountForce")) {
