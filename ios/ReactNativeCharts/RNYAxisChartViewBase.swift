@@ -25,6 +25,13 @@ class RNYAxisChartViewBase: RNChartViewBase {
             axis.spaceBottom = CGFloat(config["spaceBottom"].floatValue)
         }
 
+        if config["minWidth"].float != nil {
+            axis.minWidth = CGFloat(config["minWidth"].floatValue)
+        }
+
+        if config["maxWidth"].float != nil {
+            axis.maxWidth = CGFloat(config["maxWidth"].floatValue)
+        }
 
         if config["position"].string != nil {
             axis.labelPosition = BridgeUtils.parseYAxisLabelPosition(config["position"].stringValue)
