@@ -31,6 +31,14 @@ public abstract class YAxisChartBase<T extends Chart, U extends Entry> extends C
             axis.setPosition(YAxis.YAxisLabelPosition.valueOf(propMap.getString("position")));
         }
 
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "minWidth")) {
+            axis.setMinWidth((float) propMap.getDouble("minWidth"));
+        }
+
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "maxWidth")) {
+            axis.setMaxWidth((float) propMap.getDouble("maxWidth"));
+        }
+
         // TODO docs says the remaining config needs to be applied before setting data. Test it
         // zero line
         if (BridgeUtils.validate(propMap, ReadableType.Map, "zeroLine")) {
