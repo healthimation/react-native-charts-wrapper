@@ -42,7 +42,7 @@ open class LargeValueFormatter: NSObject, IValueFormatter, IAxisValueFormatter
         }
 
         let valueFormatter = NumberFormatter()
-        valueFormatter.maximumFractionDigits = 2
+        valueFormatter.maximumFractionDigits = 3
         valueFormatter.minimumFractionDigits = 0
 
         var r = sign + (valueFormatter.string(from: NSNumber(value: sig)) ?? "") + suffix[length]
