@@ -47,9 +47,9 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
             } else {
                 throw new IllegalArgumentException("Unexpected entry type: " + values.getType(index));
             }
-            if (map.hasKey("accessibilityLabel")) {
-                entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
-            }
+            // if (map.hasKey("accessibilityLabel")) {
+            //     entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
+            // }
             entry.setData(ConversionUtil.toMap(map));
 
         } else if (ReadableType.Array.equals(values.getType(index))) {
