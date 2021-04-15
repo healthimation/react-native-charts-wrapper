@@ -103,14 +103,14 @@ public class LineDataExtract extends DataExtract<LineData, Entry> {
                 x = (float) map.getDouble("x");
             }
             entry = new Entry(x, (float) map.getDouble("y"), ConversionUtil.toMap(map));
+
+            if (map.hasKey("accessibilityLabel")) {
+                entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
+            }
         } else if (ReadableType.Number.equals(values.getType(index))) {
             entry = new Entry(x, (float) values.getDouble(index));
         } else {
             throw new IllegalArgumentException("Unexpected entry type: " + values.getType(index));
-        }
-        
-        if (map.hasKey("accessibilityLabel")) {
-            entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
         }
         return entry;
     }

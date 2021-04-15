@@ -48,6 +48,10 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
                 throw new IllegalArgumentException("Unexpected entry type: " + values.getType(index));
             }
 
+            if (map.hasKey("accessibilityLabel")) {
+                entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
+            }
+
             entry.setData(ConversionUtil.toMap(map));
 
         } else if (ReadableType.Array.equals(values.getType(index))) {
@@ -56,10 +60,6 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
             entry = new BarEntry(x, (float) values.getDouble(index));
         } else {
             throw new IllegalArgumentException("Unexpected entry type: " + values.getType(index));
-        }
-
-        if (map.hasKey("accessibilityLabel")) {
-            entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
         }
         return entry;
     }

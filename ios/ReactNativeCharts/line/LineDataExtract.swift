@@ -115,15 +115,14 @@ class LineDataExtract : DataExtract {
                 fatalError("invalid data " + values.description);
             }
 
+            if dict["accessibilityLabel"].string != nil {
+                entry.accessibilityLabel = dict["accessibilityLabel"].string
+            }
 
         } else if value.double != nil {
             entry = ChartDataEntry(x: x, y: value.doubleValue);
         } else {
             fatalError("invalid data " + values.description);
-        }
-
-        if dict["accessibilityLabel"].string != nil {
-            entry.accessibilityLabel = dict["accessibilityLabel"].string
         }
 
         return entry;
