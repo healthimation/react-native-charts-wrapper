@@ -108,7 +108,10 @@ public class LineDataExtract extends DataExtract<LineData, Entry> {
         } else {
             throw new IllegalArgumentException("Unexpected entry type: " + values.getType(index));
         }
-
+        
+        if (map.hasKey("accessibilityLabel")) {
+            entry.setAccessibilityLabel(map.getString("accessibilityLabel"));
+        }
         return entry;
     }
 }
