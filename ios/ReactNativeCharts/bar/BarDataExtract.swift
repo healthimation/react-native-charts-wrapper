@@ -99,10 +99,6 @@ class BarDataExtract : DataExtract {
                 fatalError("invalid data " + values.description);
             }
 
-            if dict["accessibilityLabel"].string != nil {
-                entry.accessibilityLabel = dict["accessibilityLabel"].string
-            }
-
             entry.data = dict as AnyObject?;
         } else if value.array != nil {
             entry = BarChartDataEntry(x: x, yValues: (value.arrayValue.map({ y in y.doubleValue })));
@@ -110,6 +106,10 @@ class BarDataExtract : DataExtract {
             entry = BarChartDataEntry(x: x, y: value.doubleValue);
         } else {
             fatalError("invalid data " + values.description);
+        }
+
+        if dict["accessibilityLabel"].string != nil {
+            entry.accessibilityLabel = dict["accessibilityLabel"].string
         }
 
         return entry;
