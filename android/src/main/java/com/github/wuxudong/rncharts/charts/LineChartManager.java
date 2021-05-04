@@ -6,6 +6,7 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.wuxudong.rncharts.data.DataExtract;
 import com.github.wuxudong.rncharts.data.LineDataExtract;
+import com.github.wuxudong.rncharts.listener.RNAccessibilityPerformActions;
 import com.github.wuxudong.rncharts.listener.RNOnChartValueSelectedListener;
 import com.github.wuxudong.rncharts.listener.RNOnChartGestureListener;
 
@@ -21,6 +22,7 @@ public class LineChartManager extends BarLineChartBaseManager<LineChart, Entry> 
         LineChart lineChart =  new LineChart(reactContext);
         lineChart.setOnChartValueSelectedListener(new RNOnChartValueSelectedListener(lineChart));
         lineChart.setOnChartGestureListener(new RNOnChartGestureListener(lineChart));
+        lineChart.setAccessibilityPerformActions(new RNAccessibilityPerformActions(lineChart));
         return lineChart;
     }
 

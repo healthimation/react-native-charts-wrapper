@@ -412,4 +412,13 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
             ChartGroupHolder.addChart(extraProperties.group, extraProperties.identifier, chart, extraProperties.syncX, extraProperties.syncY);
         }
     }
+
+
+    @Nullable
+    @Override
+    public Map<String, Object> getExportedCustomBubblingEventTypeConstants() {
+        return MapBuilder.<String, Object>builder()
+                .put("clearAccessibilityFocus", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onClearAccessibilityFocus")))
+                .build();
+    }
 }
