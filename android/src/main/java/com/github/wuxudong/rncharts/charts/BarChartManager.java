@@ -6,6 +6,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.wuxudong.rncharts.data.BarDataExtract;
 import com.github.wuxudong.rncharts.data.DataExtract;
+import com.github.wuxudong.rncharts.listener.RNAccessibilityPerformActions;
 import com.github.wuxudong.rncharts.listener.RNOnChartGestureListener;
 import com.github.wuxudong.rncharts.listener.RNOnChartValueSelectedListener;
 
@@ -21,6 +22,7 @@ public class BarChartManager extends BarLineChartBaseManager<BarChart, BarEntry>
         BarChart barChart = new BarChart(reactContext);
         barChart.setOnChartValueSelectedListener(new RNOnChartValueSelectedListener(barChart));
         barChart.setOnChartGestureListener(new RNOnChartGestureListener(barChart));
+        barChart.setAccessibilityPerformActions(new RNAccessibilityPerformActions(barChart));
         return barChart;
     }
 
