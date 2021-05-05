@@ -104,6 +104,30 @@ class RNBarLineChartViewBase: RNYAxisChartViewBase {
         barLineChart.autoScaleMinMaxEnabled = enabled
     }
 
+    func setEnableEnlargementOnHighlight(_  enabled: Bool) {
+        barLineChart.enableEnlargementOnHighlight = enabled
+    }
+
+    func setMakeUnhighlightedEntriesSmallerEnabled(_  enabled: Bool) {
+        barLineChart.makeUnhighlightedEntriesSmallerEnabled = enabled
+    }
+
+    func setEnableDimming(_  enabled: Bool) {
+        barLineChart.enableDimming = enabled
+    }
+
+    func setDimmingAlpha(_ alpha: NSInteger) {
+        barLineChart.dimmingAlpha = alpha;
+    }
+
+    func setDecreaseScaleForUnhighlightedEntry(_ scale: CGFloat) {
+        barLineChart.decreaseScaleForUnhighlightedEntry = scale;
+    }
+
+    func setEnlargementScaleForHighlightedEntry(_ scale: CGFloat) {
+        barLineChart.enlargementScaleForHighlightedEntry = scale;
+    }
+
     func setKeepPositionOnRotation(_  enabled: Bool) {
         barLineChart.keepPositionOnRotation = enabled
     }
