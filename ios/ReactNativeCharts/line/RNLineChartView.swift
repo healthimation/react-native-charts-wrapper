@@ -33,4 +33,12 @@ class RNLineChartView: RNBarLineChartViewBase {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setEnableGroupHighlighter(_  enabled: Bool) {
+        if(enabled) {
+            chart.highlighter = GroupLineHighlighter(chart: chart)
+        } else {
+            chart.highlighter = ChartHighlighter(chart: chart)
+        }
+        chart.enableGroupHighlighter = enabled
+    }
 }

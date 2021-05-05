@@ -164,6 +164,36 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
         chart.setScaleEnabled(enabled);
     }
 
+    @ReactProp(name = "makeUnhighlightedEntriesSmallerEnabled")
+    public void makeUnhighlightedEntriesSmallerEnabled(BarLineChartBase chart, boolean enabled) {
+        chart.setMakeUnhighlightedEntriesSmalledEnabled(enabled);
+    }
+
+    @ReactProp(name = "enableEnlargementOnHighlight")
+    public void enableEnlargementOnHighlight(BarLineChartBase chart, boolean enabled) {
+        chart.setEnlargeEntryOnHighlightEnabled(enabled);
+    }
+
+    @ReactProp(name = "enableDimming")
+    public void setDimmingEnabled(BarLineChartBase chart, boolean enabled) {
+        chart.setDimmingEnabled(enabled);
+    }
+
+    @ReactProp(name = "dimmingAlpha")
+    public void setDimmingAlpha(BarLineChartBase chart, int alpha) {
+        chart.setDimmingAlpha(alpha);
+    }
+    
+    @ReactProp(name = "decreaseScaleForUnhighlightedEntry")
+    public void setDecreaseScaleForUnhighlightedEntry(BarLineChartBase chart, float scale) {
+        chart.setDecreaseScaleForUnhighlightedEntry(scale);
+    }
+
+    @ReactProp(name = "enlargementScaleForHighlightedEntry")
+    public void setEnlargementScaleForHighlightedEntry(BarLineChartBase chart, float scale) {
+        chart.setEnlargementScaleForHighlightedEntry(scale);
+    }
+
     @ReactProp(name = "dragEnabled")
     public void setDragEnabled(BarLineChartBase chart, boolean enabled) {
         chart.setDragEnabled(enabled);
