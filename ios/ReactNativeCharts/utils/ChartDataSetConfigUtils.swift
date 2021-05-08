@@ -80,6 +80,10 @@ class ChartDataSetConfigUtils: NSObject {
         if config["highlightColor"].int != nil {
             dataSet.highlightColor = RCTConvert.uiColor(config["highlightColor"].intValue);
         }
+        
+        if config["highlightLineWidth"].float != nil {
+            dataSet.highlightLineWidth = CGFloat(config["highlightLineWidth"].floatValue);
+        }
     }
 
 
@@ -94,10 +98,6 @@ class ChartDataSetConfigUtils: NSObject {
 
         if config["drawHorizontalHighlightIndicator"].bool != nil {
             dataSet.drawHorizontalHighlightIndicatorEnabled = config["drawHorizontalHighlightIndicator"].boolValue;
-        }
-
-        if config["highlightLineWidth"].float != nil {
-            dataSet.highlightLineWidth = CGFloat(config["highlightLineWidth"].floatValue);
         }
     }
 
