@@ -101,6 +101,9 @@ public class ChartDataSetConfigUtils {
         if (BridgeUtils.validate(config, ReadableType.Number, "highlightColor")) {
             dataSet.setHighLightColor(config.getInt("highlightColor"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineWidth")) {
+            dataSet.setHighlightLineWidth((float) config.getDouble("highlightLineWidth"));
+        }
     }
 
     public static void commonLineScatterCandleRadarConfig(LineScatterCandleRadarDataSet dataSet, ReadableMap config) {
@@ -112,9 +115,6 @@ public class ChartDataSetConfigUtils {
         }
         if (BridgeUtils.validate(config, ReadableType.Boolean, "drawHorizontalHighlightIndicator")) {
             dataSet.setDrawHorizontalHighlightIndicator(config.getBoolean("drawHorizontalHighlightIndicator"));
-        }
-        if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineWidth")) {
-            dataSet.setHighlightLineWidth((float) config.getDouble("highlightLineWidth"));
         }
     }
 
