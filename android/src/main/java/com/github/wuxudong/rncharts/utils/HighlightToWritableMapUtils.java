@@ -21,17 +21,17 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class HighlightToWritableMapUtils {
-    private static final String FIELD_X = "highlight_x";
-    private static final String FIELD_Y = "highlight_y";
-    private static final String FIELD_X_PX = "highlight_x_px";
-    private static final String FIELD_Y_PX = "highlight_y_px";
-    private static final String FIELD_DRAW_X = "highlight_draw_x";
-    private static final String FIELD_DRAW_Y = "highlight_draw_y";
-    private static final String FIELD_DATA_INDEX = "highlight_data_index";
-    private static final String FIELD_DATA_SET_INDEX = "highlight_data_set_index";
-    private static final String FIELD_STACK_INDEX = "highlight_stack_index";
-    private static final String FIELD_AXIS = "highlight_axis";
-    private static final String FIELD_IS_STACKED = "highlight_is_stacked";
+    private static final String FIELD_X = "x";
+    private static final String FIELD_Y = "y";
+    private static final String FIELD_X_PX = "xPx";
+    private static final String FIELD_Y_PX = "yPx";
+    private static final String FIELD_DRAW_X = "drawX";
+    private static final String FIELD_DRAW_Y = "drawY";
+    private static final String FIELD_DATA_INDEX = "dataIndex";
+    private static final String FIELD_DATA_SET_INDEX = "dataSetIndex";
+    private static final String FIELD_STACK_INDEX = "stackIndex";
+    private static final String FIELD_AXIS = "axis";
+    private static final String FIELD_IS_STACKED = "isStacked";
     private static final String AXIS_LEFT = "LEFT";
     private static final String AXIS_RIGHT = "RIGHT";
 

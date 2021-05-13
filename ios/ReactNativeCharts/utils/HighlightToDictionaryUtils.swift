@@ -3,21 +3,22 @@ import Charts
 import SwiftyJSON
 
 class HighlightToDictionaryUtils: NSObject {
-  static let FIELD_X: NSString  = "highlight_x"
-  static let FIELD_Y: NSString = "highlight_y"
-  static let FIELD_X_PX: NSString = "highlight_x_px"
-  static let FIELD_Y_PX: NSString = "highlight_y_px"
-  static let FIELD_DRAW_X: NSString = "highlight_draw_x"
-  static let FIELD_DRAW_Y: NSString = "highlight_draw_y"
-  static let FIELD_DATA_INDEX: NSString = "highlight_data_index"
-  static let FIELD_DATA_SET_INDEX: NSString = "highlight_data_set_index"
-  static let FIELD_STACK_INDEX: NSString = "highlight_stack_index"
-  static let FIELD_AXIS: NSString = "highlight_axis"
-  static let FIELD_IS_STACKED: NSString = "highlight_is_stacked"
+  static let FIELD_X: NSString  = "x"
+  static let FIELD_Y: NSString = "y"
+  static let FIELD_X_PX: NSString = "xPx"
+  static let FIELD_Y_PX: NSString = "yPx"
+  static let FIELD_DRAW_X: NSString = "drawX"
+  static let FIELD_DRAW_Y: NSString = "drawY"
+  static let FIELD_DATA_INDEX: NSString = "dataIndex"
+  static let FIELD_DATA_SET_INDEX: NSString = "dataSetIndex"
+  static let FIELD_STACK_INDEX: NSString = "stackIndex"
+  static let FIELD_AXIS: NSString = "axis"
+  static let FIELD_IS_STACKED: NSString = "isStacked"
   static let AXIS_LEFT: NSString = "LEFT"
   static let AXIS_RIGHT: NSString = "RIGHT"
 
 
+  // TODO: use this RNChartViewBase instead of EntryToDictionaryUtils
   static func highlightToDictionary(_ h: Highlight) -> [AnyHashable: Any]{
     var dict = [AnyHashable: Any]()
     
