@@ -64,6 +64,10 @@ class BarDataExtract : DataExtract {
         if config["cornerRadius"].number != nil {
             barDataSet.cornerRadius = CGFloat(config["cornerRadius"].numberValue)
         }
+
+        if config["minBarHeight"].number != nil {
+            barDataSet.minBarHeight = CGFloat(config["minBarHeight"].numberValue)
+        }
     }
 
     override func createEntry(_ values: [JSON], index: Int) -> BarChartDataEntry {

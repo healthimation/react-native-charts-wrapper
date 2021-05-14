@@ -89,6 +89,9 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
         if (BridgeUtils.validate(config, ReadableType.Number, "cornerRadius")) {
             barDataSet.setCornerRadius((float) config.getDouble("cornerRadius"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Number, "minBarHeight")) {
+            barDataSet.setMinBarHeight((float) config.getDouble("minBarHeight"));
+        }
     }
 
     @Override
