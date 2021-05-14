@@ -60,6 +60,10 @@ class BarDataExtract : DataExtract {
         if config["stackLabels"].array != nil {
             barDataSet.stackLabels = config["stackLabels"].arrayValue.map({ return $0.stringValue })
         }
+
+        if config["cornerRadius"].number != nil {
+            barDataSet.cornerRadius = CGFloat(config["cornerRadius"].numberValue)
+        }
     }
 
     override func createEntry(_ values: [JSON], index: Int) -> BarChartDataEntry {
