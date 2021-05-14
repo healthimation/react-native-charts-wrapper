@@ -463,11 +463,13 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     }
     
     @objc public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        
+        var eventDictionary = EntryToDictionaryUtils.entryToDictionary(entry)
+        eventDictionary["highlight"] = EntryToDictionaryUtils.highlightToDictionary(highlight)
+        NSLog("chartValueSelected event dictionary: %@", eventDictionary)
         if self.onSelect == nil {
             return
         } else {
-            self.onSelect!(EntryToDictionaryUtils.entryToDictionary(entry))
+            self.onSelect!(eventDictionary)
             
         }
     }
@@ -487,6 +489,10 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     
     @objc public func chartTranslated(_ chartView: ChartViewBase, dX: CoreGraphics.CGFloat, dY: CoreGraphics.CGFloat) {
         sendEvent("chartTranslated")
+        // removing selection when the chart is scrolled
+        if chartView != nil {
+           chartView.highlightValue(nil, true)
+        }
     }
     
     func sendEvent(_ action:String) {

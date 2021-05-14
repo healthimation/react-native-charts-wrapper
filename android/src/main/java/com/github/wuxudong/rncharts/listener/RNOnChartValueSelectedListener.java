@@ -1,12 +1,14 @@
 package com.github.wuxudong.rncharts.listener;
 
 import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.wuxudong.rncharts.utils.EntryToWritableMapUtils;
+import com.github.wuxudong.rncharts.utils.HighlightToWritableMapUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -14,6 +16,8 @@ import java.lang.ref.WeakReference;
  * Created by xudong on 07/03/2017.
  */
 public class RNOnChartValueSelectedListener implements OnChartValueSelectedListener {
+
+    private static final String FIELD_HIGHLIGHT = "highlight";
 
     private WeakReference<Chart> mWeakChart;
 
@@ -23,6 +27,8 @@ public class RNOnChartValueSelectedListener implements OnChartValueSelectedListe
 
     @Override
     public void onValueSelected(Entry entry, Highlight h) {
+        WritableMap eventMap = EntryToWritableMapUtils.convertEntryToWritableMap(entry);
+        eventMap.putMap(FIELD_HIGHLIGHT, HighlightToWritableMapUtils.convertHighlightToWritableMap(h));
 
         if (mWeakChart != null) {
             Chart chart = mWeakChart.get();
@@ -31,7 +37,7 @@ public class RNOnChartValueSelectedListener implements OnChartValueSelectedListe
             reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
                     chart.getId(),
                     "topSelect",
-                    EntryToWritableMapUtils.convertEntryToWritableMap(entry));
+                    eventMap);
         }
     }
 
