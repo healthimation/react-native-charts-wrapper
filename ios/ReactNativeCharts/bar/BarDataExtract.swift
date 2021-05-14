@@ -61,10 +61,6 @@ class BarDataExtract : DataExtract {
             barDataSet.stackLabels = config["stackLabels"].arrayValue.map({ return $0.stringValue })
         }
 
-        if config["drawRoundedCorners"].bool != nil {
-            barDataSet.drawRoundedCorners = config["drawRoundedCorners"].boolValue
-        }
-
         if config["cornerRadius"].number != nil {
             barDataSet.cornerRadius = CGFloat(config["cornerRadius"].numberValue)
         }
