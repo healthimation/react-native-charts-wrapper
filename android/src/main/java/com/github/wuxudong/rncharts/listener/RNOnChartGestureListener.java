@@ -74,6 +74,8 @@ public class RNOnChartGestureListener implements OnChartGestureListener {
     @Override
     public void onChartTranslate(MotionEvent me, float dX, float dY) {
         sendEvent("chartTranslated", me);
+        // removing selection when the chart is scrolled
+        mWeakChart.get().highlightValue(null, true);
     }
 
     private void sendEvent(String action, MotionEvent me) {
