@@ -490,7 +490,9 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     @objc public func chartTranslated(_ chartView: ChartViewBase, dX: CoreGraphics.CGFloat, dY: CoreGraphics.CGFloat) {
         sendEvent("chartTranslated")
         // removing selection when the chart is scrolled
-        chartValueNothingSelected(chartView)
+        if chartView != nil {
+           chartView.highlightValue(nil, true)
+        }
     }
     
     func sendEvent(_ action:String) {
