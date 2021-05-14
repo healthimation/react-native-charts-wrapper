@@ -491,7 +491,7 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
         sendEvent("chartTranslated")
         // removing selection when the chart is scrolled
         if chartView != nil {
-           chartView.highlightValue(nil, true)
+           chartView.highlightValue(nil, callDelegate: true)
         }
     }
     
