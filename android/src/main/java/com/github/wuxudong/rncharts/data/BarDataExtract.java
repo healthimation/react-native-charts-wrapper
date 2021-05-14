@@ -86,6 +86,12 @@ public class BarDataExtract extends DataExtract<BarData, BarEntry> {
         if (BridgeUtils.validate(config, ReadableType.Array, "stackLabels")) {
             barDataSet.setStackLabels(BridgeUtils.convertToStringArray(config.getArray("stackLabels")));
         }
+        if (BridgeUtils.validate(config, ReadableType.Boolean, "drawRoundedCorners")) {
+            barDataSet.setRoundedCornersEnabled(config.getBoolean("drawRoundedCorners"));
+        }
+        if (BridgeUtils.validate(config, ReadableType.Number, "cornerRadius")) {
+            barDataSet.setCornerRadius((float) config.getDouble("cornerRadius"));
+        }
     }
 
     @Override
