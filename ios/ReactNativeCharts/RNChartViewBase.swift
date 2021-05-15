@@ -489,8 +489,10 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     
     @objc public func chartTranslated(_ chartView: ChartViewBase, dX: CoreGraphics.CGFloat, dY: CoreGraphics.CGFloat) {
         sendEvent("chartTranslated")
-        // removing selection when the chart is scrolled
-        if chartView != nil {
+        NSLog("CHART TRANSLATED: dx - %f , dy - %f, chartView - %@", dX, dY, chartView)
+        // removing selection when the chart is scrolled.
+        // The animation easing goes on for couple seconds after the scroll, so we only need to trigger deselect when dX is big enough (for example, 1.0 px)
+        if chartView != nil && abs(dX) >= 1.0 {
            chartView.highlightValue(nil, callDelegate: true)
         }
     }
