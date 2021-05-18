@@ -46,6 +46,10 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
         let json = BridgeUtils.toJson(data)
         
         chart.data = dataExtract.extract(json)
+        
+        // clear selection on data update
+        NSLog("RNChartViewBase: Chart data changed -> clearing highlight (selected value)")
+        clearHighlightedValue(self.chart)
     }
     
     func setLegend(_ config: NSDictionary) {
@@ -489,7 +493,15 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     
     @objc public func chartTranslated(_ chartView: ChartViewBase, dX: CoreGraphics.CGFloat, dY: CoreGraphics.CGFloat) {
         sendEvent("chartTranslated")
-        // removing selection when the chart is scrolled
+        // removing selection when the chart is scrolled.
+        // The animation easing goes on for couple seconds after the scroll, so we only need to trigger deselect when dX is big enough (for example, 1.0 px)
+        if abs(dX) >= 1.0 {
+           //chartView.highlightValue(nil, callDelegate: true)
+            clearHighlightedValue(chartView);
+        }
+    }
+    
+    func clearHighlightedValue(_ chartView: ChartViewBase) {
         if chartView != nil {
            chartView.highlightValue(nil, callDelegate: true)
         }

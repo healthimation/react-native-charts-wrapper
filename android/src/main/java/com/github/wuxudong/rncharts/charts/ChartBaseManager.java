@@ -2,6 +2,7 @@ package com.github.wuxudong.rncharts.charts;
 
 import android.content.res.ColorStateList;
 import android.os.Build;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
@@ -468,6 +469,11 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
     @ReactProp(name = "data")
     public void setData(T chart, ReadableMap propMap) {
         chart.setData(getDataExtract().extract(chart, propMap));
+        // clear selection on data update
+        Log.d("ChartBaseManager", "Chart data changed -> clearing highlight (selected value)");
+        if (chart != null) {
+            chart.highlightValue(null, true);
+        }
     }
 
     @ReactProp(name = "highlights")
