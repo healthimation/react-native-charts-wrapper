@@ -33,13 +33,7 @@ public class LineChartManager extends BarLineChartBaseManager<LineChart, Entry> 
 
     @ReactProp(name = "enableGroupHighlighter")
     public void enableGroupLineHighlighter(LineChart chart, boolean enabled) {
-        if(enabled) {
-            chart.setGroupSelectionEnabled(true);
-            chart.setHighlighter(new GroupLineHighlighter(chart));
-        } else {
-            chart.setGroupSelectionEnabled(false);
-            chart.setHighlighter(new ChartHighlighter(chart));
-        }
+        chart.setGroupSelectionEnabled(enabled);
     }
 
     @Override
