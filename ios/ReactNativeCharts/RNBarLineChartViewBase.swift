@@ -104,6 +104,14 @@ class RNBarLineChartViewBase: RNYAxisChartViewBase {
         barLineChart.autoScaleMinMaxEnabled = enabled
     }
 
+    func setAllowDashesWhenChartIsEmpty(_  enabled: Bool) {
+        barLineChart.allowDashesWhenChartIsEmpty = enabled
+    }
+
+    func setAmountOfDashes(_ count: NSInteger) {
+        barLineChart.amountOfDashes = count
+    }
+
     func setEnableEnlargementOnHighlight(_  enabled: Bool) {
         barLineChart.enableEnlargementOnHighlight = enabled
     }

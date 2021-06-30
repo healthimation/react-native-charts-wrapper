@@ -154,6 +154,16 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
         chart.setAutoScaleMinMaxEnabled(enabled);
     }
 
+    @ReactProp(name = "allowDashesWhenChartIsEmpty")
+    public void setAllowDashesWhenChartIsEmpty(BarLineChartBase chart, boolean enabled) {
+        chart.setAllowDashesWhenChartIsEmpty(enabled);
+    }
+
+    @ReactProp(name = "amountOfDashes")
+    public void setAmountOfDashes(BarLineChartBase chart, int amount) {
+        chart.setAmountOfDashes(amount);
+    }
+
     @ReactProp(name = "keepPositionOnRotation")
     public void setKeepPositionOnRotation(BarLineChartBase chart, boolean enabled) {
         chart.setKeepPositionOnRotation(enabled);
