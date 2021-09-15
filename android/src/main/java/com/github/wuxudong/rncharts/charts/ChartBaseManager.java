@@ -352,6 +352,28 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
             axis.enableGridDashedLine(lineLength, spaceLength, phase);
         }
 
+        if (BridgeUtils.validate(propMap, ReadableType.Map, "target")) {
+            ReadableMap target = propMap.getMap("target");
+            int textColor = 0;
+            int backgroundColor = 0;
+            float backgroundPadding = 5;
+            float backgroundRadius = 5;
+
+            if (BridgeUtils.validate(target, ReadableType.Number, "textColor")) {
+                textColor = target.getInt("textColor");
+            }
+            if (BridgeUtils.validate(target, ReadableType.Number, "backgroundColor")) {
+                backgroundColor = target.getInt("backgroundColor");
+            }
+            if (BridgeUtils.validate(target, ReadableType.Number, "backgroundPadding")) {
+                backgroundPadding = (float) target.getDouble("backgroundPadding");
+            }
+            if (BridgeUtils.validate(target, ReadableType.Number, "backgroundRadius")) {
+                backgroundRadius = (float) target.getDouble("backgroundRadius");
+            }
+            axis.setTargetProps(textColor, backgroundColor, backgroundPadding, backgroundRadius);
+        }
+
         // limit lines
         if (BridgeUtils.validate(propMap, ReadableType.Array, "limitLines")) {
             ReadableArray limitLines = propMap.getArray("limitLines");

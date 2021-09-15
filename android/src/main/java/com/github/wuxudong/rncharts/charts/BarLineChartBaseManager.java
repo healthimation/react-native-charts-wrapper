@@ -193,6 +193,26 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
     public void setDimmingAlpha(BarLineChartBase chart, int alpha) {
         chart.setDimmingAlpha(alpha);
     }
+
+    @ReactProp(name = "targetLineWidth")
+    public void setTargetLineWidth(BarLineChartBase chart, float width) {
+        chart.setTargetLineWidth(width);
+    }
+
+    @ReactProp(name = "targetValue")
+    public void setTargetValue(BarLineChartBase chart, float value) {
+        chart.setTargetValue(value);
+    }
+
+    @ReactProp(name = "targetLineColor")
+    public void setTargetLineColor(BarLineChartBase chart, Integer color) {
+        chart.setTargetLineColor(color);
+    }
+
+    @ReactProp(name = "targetEnabled")
+    public void setTargetEnabled(BarLineChartBase chart, boolean enabled) {
+        chart.setTargetEnabled(enabled);
+    }
     
     @ReactProp(name = "decreaseScaleForUnhighlightedEntry")
     public void setDecreaseScaleForUnhighlightedEntry(BarLineChartBase chart, float scale) {
