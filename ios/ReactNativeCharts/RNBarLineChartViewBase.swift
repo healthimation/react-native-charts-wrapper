@@ -128,6 +128,22 @@ class RNBarLineChartViewBase: RNYAxisChartViewBase {
         barLineChart.dimmingAlpha = alpha;
     }
 
+    func setTargetEnabled(_  enabled: Bool) {
+        barLineChart.targetEnabled = enabled
+    }
+
+    func setTargetValue(_ value: CGFloat) {
+        barLineChart.targetValue = value;
+    }
+
+    func setTargetLineColor(_ color: Int) {
+        barLineChart.targetLineColor = RCTConvert.uiColor(color);
+    }
+
+    func setTargetLineWidth(_ width: CGFloat) {
+        barLineChart.targetLineWidth = width;
+    }
+
     func setDecreaseScaleForUnhighlightedEntry(_ scale: CGFloat) {
         barLineChart.decreaseScaleForUnhighlightedEntry = scale;
     }

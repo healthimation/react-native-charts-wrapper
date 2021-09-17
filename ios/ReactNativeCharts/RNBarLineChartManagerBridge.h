@@ -36,6 +36,10 @@ RCT_EXPORT_VIEW_PROPERTY(enableDimming, BOOL) \
 RCT_EXPORT_VIEW_PROPERTY(dimmingAlpha, NSInteger) \
 RCT_EXPORT_VIEW_PROPERTY(decreaseScaleForUnhighlightedEntry, CGFloat) \
 RCT_EXPORT_VIEW_PROPERTY(enlargementScaleForHighlightedEntry, CGFloat) \
+RCT_EXPORT_VIEW_PROPERTY(targetEnabled, BOOL) \
+RCT_EXPORT_VIEW_PROPERTY(targetValue, CGFloat) \
+RCT_EXPORT_VIEW_PROPERTY(targetLineColor, NSInteger) \
+RCT_EXPORT_VIEW_PROPERTY(targetLineWidth, CGFloat) \
 RCT_EXTERN_METHOD(moveViewToX:(nonnull NSNumber *)node xValue:(nonnull NSNumber *)xValue) \
 RCT_EXTERN_METHOD(moveViewTo:(nonnull NSNumber *)node xValue:(nonnull NSNumber *)xValue yValue:(nonnull NSNumber *)yValue axisDependency:(nonnull NSString *)axisDependency) \
 RCT_EXTERN_METHOD(moveViewToAnimated:(nonnull NSNumber *)node xValue:(nonnull NSNumber *)xValue yValue:(nonnull NSNumber *)yValue axisDependency:(nonnull NSString *)axisDependency duration:(nonnull NSNumber *)duration) \
