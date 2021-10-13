@@ -323,6 +323,33 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
             
             axis.gridLineDashLengths = [lineLength, spaceLength]
         }
+
+        if config["target"].exists() {
+            let target = config["target"]
+            
+            var textColor = NSUIColor.black
+            var backgroundColor = NSUIColor.green
+            var backgroundPadding = CGFloat(5)
+            var backgroundRadius = CGFloat(5)
+
+            if target["textColor"].int != nil {
+                textColor = RCTConvert.uiColor(target["textColor"].intValue)
+            }
+
+            if target["backgroundColor"].int != nil {
+                backgroundColor = RCTConvert.uiColor(target["backgroundColor"].intValue)
+            }
+            
+            if target["backgroundPadding"].number != nil {
+                backgroundPadding = CGFloat(truncating: target["backgroundPadding"].numberValue)
+            }
+
+            if target["backgroundRadius"].number != nil {
+                backgroundRadius = CGFloat(truncating: target["backgroundRadius"].numberValue)
+            }
+            
+            axis.setTargetProps(textColor: textColor, backgroundColor: backgroundColor, padding: backgroundPadding, radius: backgroundRadius)
+        }
         
         // limit lines
         if config["limitLines"].array != nil {
